@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7fb">
+  <meta name="description" content="SEEF — Self-Evolving Feature Engineering Framework. Monitor drift, evolve features, and inspect every real adaptation.">
+  <title>SEEF — Self-Evolving Feature Engineering Framework</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%236a55e7'/%3E%3Cpath d='M28 10H16a5 5 0 0 0 0 10h7a5 5 0 0 1 0 10H12' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#view">Skip to workspace</a>
+  <header class="site-header">
+    <a class="brand" href="#overview" aria-label="SEEF home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M24 6H13a5 5 0 0 0 0 10h6a5 5 0 0 1 0 10H8"/></svg></span><span><b>SEEF</b><small>Self-Evolving Feature Engineering Framework</small></span></a>
+    <nav aria-label="Workspace"><button id="nav-overview" data-page="overview">Overview</button><button id="nav-process" data-page="process">Process</button><button id="nav-results" data-page="results">Results</button></nav>
+    <span class="runtime-pill"><i></i> Browser simulation</span>
+  </header>
+  <main class="workspace">
+    <section class="heading-row"><div><p class="eyebrow">SEEF — Self-Evolving Feature Engineering Framework</p><h1 id="page-title">Understand every adaptation.</h1><p id="page-desc">A changing stream. Evolving features. One frozen classifier.</p></div><div class="run-indicator"><span id="status-dot"></span><b id="run-status">Ready</b><small id="sample-status">0 samples</small></div></section>
+    <section class="control-bar" aria-label="Stream controls">
+      <div class="setup"><label for="scenario">Scenario</label><select id="scenario"><option value="demo">Full evolution demo</option><option value="sudden">Sudden drift</option><option value="recurring">Recurring drift</option></select><label for="seed">Seed</label><input id="seed" type="number" min="0" max="4294967295" step="1" value="42" aria-describedby="seed-help"><span id="seed-help" class="sr-only">Applied when resetting or running the full demo.</span></div>
+      <div class="actions"><button id="reset" class="button subtle">Reset</button><button id="tick" class="button secondary">Step +160</button><button id="demo" class="button secondary">Run full demo</button><button id="play" class="button primary"><span aria-hidden="true">▶</span> Start stream</button></div>
+    </section>
+    <div id="progress-wrap" hidden role="status"><div><span id="progress-label">Computing…</span><b id="progress-percent">0%</b></div><progress id="progress-bar" max="100" value="0">0%</progress></div>
+    <div id="notice" hidden role="status"></div>
+    <section id="view" tabindex="-1" aria-label="Workspace content"></section>
+    <footer><span><b>SEEF</b> — Self-Evolving Feature Engineering Framework</span><span>Synthetic data · Measured outcomes · Frozen classifier</span><button id="method-open">How it works ↗</button></footer>
+  </main>
+  <dialog id="method-dialog" aria-labelledby="method-title"><div class="dialog-top"><span class="eyebrow">THE CORE METHOD</span><button id="method-close" class="button subtle" aria-label="Close method">×</button></div><h2 id="method-title">SEEF — Self-Evolving Feature Engineering Framework</h2><p>SEEF changes the feature representation when a stream changes. Its classifier weights stay fixed.</p><ol><li><b>Monitor:</b> predict first, then measure performance after each label arrives.</li><li><b>Detect:</b> confirm a drift over two windows and create a fingerprint.</li><li><b>Recall:</b> find successful feature repairs from similar fingerprints.</li><li><b>Evolve:</b> generate and rank context-relevant transformations.</li><li><b>Validate:</b> test candidates on future samples and require repeated passes.</li><li><b>Deploy:</b> promote a passing feature, store the repair, and monitor for rollback.</li></ol><p class="method-note">This is a three-variable, binary synthetic research prototype with one replaceable feature slot. The browser computes its own results using detector approximations. The Python engine uses River and scikit-learn; outputs can differ between runtimes. Improvements and memory reuse are measured, never guaranteed.</p></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

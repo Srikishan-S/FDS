@@ -1,0 +1,31 @@
+from dataclasses import dataclass
+@dataclass
+class Config:
+    seed: int = 42
+    window: int = 160
+    speed: int = 320
+    drift_at: int = 3000
+    stage_length: int = 3000
+    drift_threshold: float = .28
+    min_improvement: float = .03
+    stable_windows: int = 5
+    max_candidates: int = 30
+    shortlist: int = 6
+    max_features: int = 6
+    latency_limit_ms: float = 5.0
+    resource_limit_mb: float = 32.0
+    stability_threshold: float = .80
+    confidence_threshold: float = .65
+    similarity_threshold: float = .85
+    epsilon: float = .15
+    reward_performance: float = 1.0
+    reward_latency: float = .15
+    reward_complexity: float = .10
+    reward_instability: float = .25
+    use_memory: bool = True
+    conditioned: bool = True
+    retrain: bool = False
+    static: bool = False
+    label_delay: int = 0
+    scenario: str = 'demo'
+    memory_path: str = ':memory:'

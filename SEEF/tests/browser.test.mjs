@@ -1,0 +1,37 @@
+import assert from 'node:assert/strict';
+import { SEEF } from '../browser/engine.js';
+const e=new SEEF();e.advance(11000);
+const promotions=e.events.filter(e=>e.event==='Feature promoted');
+const recall=promotions.find(e=>e.reused);
+assert.ok(recall,'Recurring fingerprint must retrieve a successful repair');
+assert.ok(recall.adaptationDelay<promotions[0].adaptationDelay);
+assert.deepEqual(e.model.w,e.model.initial,'SEEF must freeze the classifier');
+const delayed=new SEEF({labelDelay:200});delayed.advance(320);
+assert.equal(delayed.pending.length,200);assert.equal(delayed.rows.length,120);
+const rejected=new SEEF({driftAt:320,stageLength:3000,window:80,latencyLimit:1e-12});rejected.advance(2400);
+assert.ok(!rejected.events.some(e=>e.event==='Feature promoted'),'Latency gate must reject unsafe candidates');
+console.log('SEEF browser integration tests passed');
+
+// The visualizer follows recorded evidence and never mutates older checkpoints.
+const {stageState}=await import('../browser/process.js');
+const trace=e.processTrace;
+assert.ok(trace.some(s=>s.stage==='detect'&&s.event==='Drift detected'));
+assert.ok(trace.some(s=>s.stage==='recall'&&s.event==='Memory queried'));
+assert.ok(trace.some(s=>s.stage==='evolve'&&s.event==='Candidate features generated'));
+const evaluated=trace.find(s=>s.event==='Window evaluated'&&s.candidates.some(c=>c.f1!==null));
+assert.ok(evaluated,'Future-window scores must appear in recorded checkpoints');
+const frozen=JSON.stringify(evaluated);
+const deployed=trace.find(s=>s.event==='Feature promoted');
+assert.equal(stageState(deployed,'deploy'),'complete');
+assert.equal(deployed.active,promotions[0].feature);
+const remembered=trace.find(s=>s.event==='Memory updated');
+assert.ok(remembered.memoryCount>0);
+e.advance(320);
+assert.equal(JSON.stringify(evaluated),frozen,'Replay checkpoints must remain immutable');
+assert.deepEqual(e.export().processTrace,e.processTrace);
+assert.ok(rejected.processTrace.some(s=>s.outcome==='rejected'&&stageState(s,'validate')==='rejected'));
+const initial=delayed.processTrace[0];
+assert.equal(stageState(initial,'stream'),'active');
+assert.equal(stageState(initial,'deploy'),'pending');
+assert.ok(delayed.processTrace.every(s=>s.candidates.length===0),'No candidates before observed drift');
+console.log('SEEF process recording and replay-state tests passed');

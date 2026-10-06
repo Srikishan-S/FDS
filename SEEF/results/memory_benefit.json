@@ -1,0 +1,9 @@
+{
+  "mean_f1_difference_with_minus_without_EAM": 0.011306748698082236,
+  "seeds": [
+    42,
+    7,
+    21
+  ],
+  "steps": 14000
+}

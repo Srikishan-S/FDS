@@ -1,0 +1,1576 @@
+{
+  "framework": "SEEF \u2014 Self-Evolving Feature Engineering Framework",
+  "config": {
+    "seed": 42,
+    "window": 160,
+    "speed": 320,
+    "drift_at": 3000,
+    "stage_length": 3000,
+    "drift_threshold": 0.28,
+    "min_improvement": 0.03,
+    "stable_windows": 5,
+    "max_candidates": 30,
+    "shortlist": 6,
+    "max_features": 6,
+    "latency_limit_ms": 5.0,
+    "resource_limit_mb": 32.0,
+    "stability_threshold": 0.8,
+    "confidence_threshold": 0.65,
+    "similarity_threshold": 0.85,
+    "epsilon": 0.15,
+    "reward_performance": 1.0,
+    "reward_latency": 0.15,
+    "reward_complexity": 0.1,
+    "reward_instability": 0.25,
+    "use_memory": true,
+    "conditioned": true,
+    "retrain": false,
+    "static": false,
+    "label_delay": 0,
+    "scenario": "demo",
+    "memory_path": ":memory:"
+  },
+  "summary": {
+    "adaptations": 4,
+    "mean_adaptation_delay": 1040.0,
+    "reuse_rate": 0.25,
+    "mean_detection_delay": 299.0,
+    "mean_f1": 0.792764279214248,
+    "adaptation_gain": 0.10765387229813361,
+    "recovery_ratio": 0.9793403696703242,
+    "feature_efficiency": 0.438678219194616
+  },
+  "history": [
+    {
+      "step": 159,
+      "SEEF": 0.9803921568627451,
+      "Static": 0.9803921568627451,
+      "accuracy": 0.98125,
+      "latency_ms": 0.018150962503682422,
+      "feature": "identity",
+      "drift_score": 0.0
+    },
+    {
+      "step": 319,
+      "SEEF": 0.9793103448275862,
+      "Static": 0.9793103448275862,
+      "accuracy": 0.98125,
+      "latency_ms": 0.01711629999761044,
+      "feature": "identity",
+      "drift_score": 0.03941874013443343
+    },
+    {
+      "step": 479,
+      "SEEF": 0.9696969696969697,
+      "Static": 0.9696969696969697,
+      "accuracy": 0.975,
+      "latency_ms": 0.010241299983704266,
+      "feature": "identity",
+      "drift_score": 0.05084082130436971
+    },
+    {
+      "step": 639,
+      "SEEF": 0.9707602339181286,
+      "Static": 0.9707602339181286,
+      "accuracy": 0.96875,
+      "latency_ms": 0.03624105626727214,
+      "feature": "identity",
+      "drift_score": 0.06260438694998154
+    },
+    {
+      "step": 799,
+      "SEEF": 0.9681528662420382,
+      "Static": 0.9681528662420382,
+      "accuracy": 0.96875,
+      "latency_ms": 0.01183098751482703,
+      "feature": "identity",
+      "drift_score": 0.04410050788155802
+    },
+    {
+      "step": 959,
+      "SEEF": 0.9707602339181286,
+      "Static": 0.9707602339181286,
+      "accuracy": 0.96875,
+      "latency_ms": 0.010359587508901313,
+      "feature": "identity",
+      "drift_score": 0.02622961746348165
+    },
+    {
+      "step": 1119,
+      "SEEF": 0.9873417721518988,
+      "Static": 0.9873417721518988,
+      "accuracy": 0.9875,
+      "latency_ms": 0.013962281241219898,
+      "feature": "identity",
+      "drift_score": 0.031491031277274005
+    },
+    {
+      "step": 1279,
+      "SEEF": 0.9493670886075949,
+      "Static": 0.9493670886075949,
+      "accuracy": 0.95,
+      "latency_ms": 0.009364750019358326,
+      "feature": "identity",
+      "drift_score": 0.07537699879168276
+    },
+    {
+      "step": 1439,
+      "SEEF": 0.9529411764705882,
+      "Static": 0.9529411764705882,
+      "accuracy": 0.95,
+      "latency_ms": 0.009369343757725801,
+      "feature": "identity",
+      "drift_score": 0.05933261344441035
+    },
+    {
+      "step": 1599,
+      "SEEF": 0.9633507853403142,
+      "Static": 0.9633507853403142,
+      "accuracy": 0.95625,
+      "latency_ms": 0.011271056223449705,
+      "feature": "identity",
+      "drift_score": 0.06155021269091699
+    },
+    {
+      "step": 1759,
+      "SEEF": 0.971830985915493,
+      "Static": 0.971830985915493,
+      "accuracy": 0.975,
+      "latency_ms": 0.011279037491362942,
+      "feature": "identity",
+      "drift_score": 0.02508801070575622
+    },
+    {
+      "step": 1919,
+      "SEEF": 0.9290322580645162,
+      "Static": 0.9290322580645162,
+      "accuracy": 0.93125,
+      "latency_ms": 0.017665100008912304,
+      "feature": "identity",
+      "drift_score": 0.11883374427816766
+    },
+    {
+      "step": 2079,
+      "SEEF": 0.974025974025974,
+      "Static": 0.974025974025974,
+      "accuracy": 0.975,
+      "latency_ms": 0.008682312505925438,
+      "feature": "identity",
+      "drift_score": 0.04644729417740079
+    },
+    {
+      "step": 2239,
+      "SEEF": 0.9634146341463414,
+      "Static": 0.9634146341463414,
+      "accuracy": 0.9625,
+      "latency_ms": 0.008719356250708188,
+      "feature": "identity",
+      "drift_score": 0.08502394926400703
+    },
+    {
+      "step": 2399,
+      "SEEF": 0.9781021897810219,
+      "Static": 0.9781021897810219,
+      "accuracy": 0.98125,
+      "latency_ms": 0.010168043772296187,
+      "feature": "identity",
+      "drift_score": 0.06294100800864105
+    },
+    {
+      "step": 2559,
+      "SEEF": 0.9315068493150684,
+      "Static": 0.9315068493150684,
+      "accuracy": 0.9375,
+      "latency_ms": 0.009627512508814107,
+      "feature": "identity",
+      "drift_score": 0.07832138571479502
+    },
+    {
+      "step": 2719,
+      "SEEF": 0.9759036144578314,
+      "Static": 0.9759036144578314,
+      "accuracy": 0.975,
+      "latency_ms": 0.012535249990719421,
+      "feature": "identity",
+      "drift_score": 0.04710692783030133
+    },
+    {
+      "step": 2879,
+      "SEEF": 0.9624060150375939,
+      "Static": 0.9624060150375939,
+      "accuracy": 0.96875,
+      "latency_ms": 0.012451162504589774,
+      "feature": "identity",
+      "drift_score": 0.037935807002391235
+    },
+    {
+      "step": 3039,
+      "SEEF": 0.8717948717948718,
+      "Static": 0.8717948717948718,
+      "accuracy": 0.875,
+      "latency_ms": 0.009252168732132304,
+      "feature": "identity",
+      "drift_score": 0.23097915100258468
+    },
+    {
+      "step": 3199,
+      "SEEF": 0.4794520547945205,
+      "Static": 0.4794520547945205,
+      "accuracy": 0.525,
+      "latency_ms": 0.012723487489552099,
+      "feature": "identity",
+      "drift_score": 0.5004992525735524
+    },
+    {
+      "step": 3359,
+      "SEEF": 0.5222929936305732,
+      "Static": 0.5222929936305732,
+      "accuracy": 0.53125,
+      "latency_ms": 0.01764671251294203,
+      "feature": "identity",
+      "drift_score": 0.4714632963631941
+    },
+    {
+      "step": 3519,
+      "SEEF": 0.6900584795321637,
+      "Static": 0.6900584795321637,
+      "accuracy": 0.66875,
+      "latency_ms": 0.019216768777141624,
+      "feature": "identity",
+      "drift_score": 0.44779397338042337
+    },
+    {
+      "step": 3679,
+      "SEEF": 0.5095541401273885,
+      "Static": 0.5095541401273885,
+      "accuracy": 0.51875,
+      "latency_ms": 0.015309562485299466,
+      "feature": "identity",
+      "drift_score": 0.5125834497846222
+    },
+    {
+      "step": 3839,
+      "SEEF": 0.5534591194968553,
+      "Static": 0.5534591194968553,
+      "accuracy": 0.55625,
+      "latency_ms": 0.017848443761181443,
+      "feature": "identity",
+      "drift_score": 0.47052397968533805
+    },
+    {
+      "step": 3999,
+      "SEEF": 0.609271523178808,
+      "Static": 0.609271523178808,
+      "accuracy": 0.63125,
+      "latency_ms": 0.012752468742860401,
+      "feature": "identity",
+      "drift_score": 0.4975150396573854
+    },
+    {
+      "step": 4159,
+      "SEEF": 0.5620915032679739,
+      "Static": 0.5620915032679739,
+      "accuracy": 0.58125,
+      "latency_ms": 0.014297487467729297,
+      "feature": "identity",
+      "drift_score": 0.4768806525516512
+    },
+    {
+      "step": 4319,
+      "SEEF": 0.7204968944099379,
+      "Static": 0.7204968944099379,
+      "accuracy": 0.71875,
+      "latency_ms": 0.02012848123342792,
+      "feature": "identity",
+      "drift_score": 0.38608360931265445
+    },
+    {
+      "step": 4479,
+      "SEEF": 0.6329113924050633,
+      "Static": 0.6329113924050633,
+      "accuracy": 0.6375,
+      "latency_ms": 0.011139368749013556,
+      "feature": "identity",
+      "drift_score": 0.437563222969632
+    },
+    {
+      "step": 4639,
+      "SEEF": 0.9634146341463414,
+      "Static": 0.625,
+      "accuracy": 0.9625,
+      "latency_ms": 0.03610879375059994,
+      "feature": "x1*x2",
+      "drift_score": 0.11345914043748347
+    },
+    {
+      "step": 4799,
+      "SEEF": 0.9720670391061452,
+      "Static": 0.6815642458100558,
+      "accuracy": 0.96875,
+      "latency_ms": 0.03184773125042284,
+      "feature": "x1*x2",
+      "drift_score": 0.0342239218913291
+    },
+    {
+      "step": 4959,
+      "SEEF": 0.9554140127388535,
+      "Static": 0.6037735849056604,
+      "accuracy": 0.95625,
+      "latency_ms": 0.02803284999686184,
+      "feature": "x1*x2",
+      "drift_score": 0.04294197581065779
+    },
+    {
+      "step": 5119,
+      "SEEF": 0.9487179487179487,
+      "Static": 0.5975609756097561,
+      "accuracy": 0.95,
+      "latency_ms": 0.031498281248332205,
+      "feature": "x1*x2",
+      "drift_score": 0.04749942404660086
+    },
+    {
+      "step": 5279,
+      "SEEF": 0.9548387096774194,
+      "Static": 0.5106382978723404,
+      "accuracy": 0.95625,
+      "latency_ms": 0.02536208749290836,
+      "feature": "x1*x2",
+      "drift_score": 0.05161534608841962
+    },
+    {
+      "step": 5439,
+      "SEEF": 0.975609756097561,
+      "Static": 0.5647058823529412,
+      "accuracy": 0.975,
+      "latency_ms": 0.024300224973217155,
+      "feature": "x1*x2",
+      "drift_score": 0.0557832656177964
+    },
+    {
+      "step": 5599,
+      "SEEF": 0.9473684210526315,
+      "Static": 0.5921052631578947,
+      "accuracy": 0.95625,
+      "latency_ms": 0.027761481229049423,
+      "feature": "x1*x2",
+      "drift_score": 0.061233288803190525
+    },
+    {
+      "step": 5759,
+      "SEEF": 0.9241379310344827,
+      "Static": 0.5165562913907285,
+      "accuracy": 0.93125,
+      "latency_ms": 0.028109950002885853,
+      "feature": "x1*x2",
+      "drift_score": 0.075166569880848
+    },
+    {
+      "step": 5919,
+      "SEEF": 0.956989247311828,
+      "Static": 0.6214689265536724,
+      "accuracy": 0.95,
+      "latency_ms": 0.025806943764905554,
+      "feature": "x1*x2",
+      "drift_score": 0.05819250598149446
+    },
+    {
+      "step": 6079,
+      "SEEF": 0.7397260273972602,
+      "Static": 0.6143790849673203,
+      "accuracy": 0.7625,
+      "latency_ms": 0.032199118754761,
+      "feature": "x1*x2",
+      "drift_score": 0.37273946250756396
+    },
+    {
+      "step": 6239,
+      "SEEF": 0.5255474452554745,
+      "Static": 0.44755244755244755,
+      "accuracy": 0.59375,
+      "latency_ms": 0.03383079373406872,
+      "feature": "x1*x2",
+      "drift_score": 0.47073360578931966
+    },
+    {
+      "step": 6399,
+      "SEEF": 0.4925373134328358,
+      "Static": 0.3546099290780142,
+      "accuracy": 0.575,
+      "latency_ms": 0.030963418734586412,
+      "feature": "x1*x2",
+      "drift_score": 0.5259503318920056
+    },
+    {
+      "step": 6559,
+      "SEEF": 0.4117647058823529,
+      "Static": 0.366412213740458,
+      "accuracy": 0.5,
+      "latency_ms": 0.026567825000256562,
+      "feature": "x1*x2",
+      "drift_score": 0.5567210958336656
+    },
+    {
+      "step": 6719,
+      "SEEF": 0.4098360655737705,
+      "Static": 0.3875968992248062,
+      "accuracy": 0.55,
+      "latency_ms": 0.025448424986507234,
+      "feature": "x1*x2",
+      "drift_score": 0.5105544563061847
+    },
+    {
+      "step": 6879,
+      "SEEF": 0.4316546762589928,
+      "Static": 0.3333333333333333,
+      "accuracy": 0.50625,
+      "latency_ms": 0.02934203750726283,
+      "feature": "x1*x2",
+      "drift_score": 0.5122838829027818
+    },
+    {
+      "step": 7039,
+      "SEEF": 0.48175182481751827,
+      "Static": 0.3875968992248062,
+      "accuracy": 0.55625,
+      "latency_ms": 0.0247148937376096,
+      "feature": "x1*x2",
+      "drift_score": 0.5001472788798097
+    },
+    {
+      "step": 7199,
+      "SEEF": 0.4426229508196721,
+      "Static": 0.453125,
+      "accuracy": 0.575,
+      "latency_ms": 0.02993352499629509,
+      "feature": "x1*x2",
+      "drift_score": 0.47573131680242187
+    },
+    {
+      "step": 7359,
+      "SEEF": 0.4861111111111111,
+      "Static": 0.3916083916083916,
+      "accuracy": 0.5375,
+      "latency_ms": 0.027660387496553085,
+      "feature": "x1*x2",
+      "drift_score": 0.4952907041678646
+    },
+    {
+      "step": 7519,
+      "SEEF": 0.9827586206896551,
+      "Static": 0.4,
+      "accuracy": 0.9875,
+      "latency_ms": 0.05027260623933216,
+      "feature": "x1\u00b2",
+      "drift_score": 0.14995574084144053
+    },
+    {
+      "step": 7679,
+      "SEEF": 0.968421052631579,
+      "Static": 0.384,
+      "accuracy": 0.98125,
+      "latency_ms": 0.0334465624916902,
+      "feature": "x1\u00b2",
+      "drift_score": 0.09568067559937472
+    },
+    {
+      "step": 7839,
+      "SEEF": 0.9830508474576272,
+      "Static": 0.46715328467153283,
+      "accuracy": 0.9875,
+      "latency_ms": 0.025423281238090567,
+      "feature": "x1\u00b2",
+      "drift_score": 0.05899369739454215
+    },
+    {
+      "step": 7999,
+      "SEEF": 0.9523809523809523,
+      "Static": 0.37410071942446044,
+      "accuracy": 0.96875,
+      "latency_ms": 0.03879474377015413,
+      "feature": "x1\u00b2",
+      "drift_score": 0.05738917205017851
+    },
+    {
+      "step": 8159,
+      "SEEF": 0.9454545454545454,
+      "Static": 0.5147058823529411,
+      "accuracy": 0.9625,
+      "latency_ms": 0.035428024995098895,
+      "feature": "x1\u00b2",
+      "drift_score": 0.04641470104718797
+    },
+    {
+      "step": 8319,
+      "SEEF": 0.9777777777777777,
+      "Static": 0.4090909090909091,
+      "accuracy": 0.9875,
+      "latency_ms": 0.031009318738028924,
+      "feature": "x1\u00b2",
+      "drift_score": 0.04816619853717113
+    },
+    {
+      "step": 8479,
+      "SEEF": 0.9915966386554622,
+      "Static": 0.45588235294117646,
+      "accuracy": 0.99375,
+      "latency_ms": 0.023990000022422464,
+      "feature": "x1\u00b2",
+      "drift_score": 0.05218151001988379
+    },
+    {
+      "step": 8639,
+      "SEEF": 1.0,
+      "Static": 0.4142857142857143,
+      "accuracy": 1.0,
+      "latency_ms": 0.03826064374834459,
+      "feature": "x1\u00b2",
+      "drift_score": 0.026260707881616645
+    },
+    {
+      "step": 8799,
+      "SEEF": 0.9702970297029703,
+      "Static": 0.45161290322580644,
+      "accuracy": 0.98125,
+      "latency_ms": 0.024836662512939256,
+      "feature": "x1\u00b2",
+      "drift_score": 0.06224285926984453
+    },
+    {
+      "step": 8959,
+      "SEEF": 0.9702970297029703,
+      "Static": 0.4186046511627907,
+      "accuracy": 0.98125,
+      "latency_ms": 0.03293497497054432,
+      "feature": "x1\u00b2",
+      "drift_score": 0.0412878168395821
+    },
+    {
+      "step": 9119,
+      "SEEF": 0.5203252032520326,
+      "Static": 0.6586826347305389,
+      "accuracy": 0.63125,
+      "latency_ms": 0.025284399990255224,
+      "feature": "x1\u00b2",
+      "drift_score": 0.53039201729266
+    },
+    {
+      "step": 9279,
+      "SEEF": 0.35036496350364965,
+      "Static": 0.569620253164557,
+      "accuracy": 0.44375,
+      "latency_ms": 0.03165991251137257,
+      "feature": "x1\u00b2",
+      "drift_score": 0.5303997041659271
+    },
+    {
+      "step": 9439,
+      "SEEF": 0.3247863247863248,
+      "Static": 0.6111111111111112,
+      "accuracy": 0.50625,
+      "latency_ms": 0.03497040623017256,
+      "feature": "x1\u00b2",
+      "drift_score": 0.4662577258387231
+    },
+    {
+      "step": 9599,
+      "SEEF": 0.37410071942446044,
+      "Static": 0.5578231292517006,
+      "accuracy": 0.45625,
+      "latency_ms": 0.029247318747138706,
+      "feature": "x1\u00b2",
+      "drift_score": 0.4674216647531943
+    },
+    {
+      "step": 9759,
+      "SEEF": 0.42962962962962964,
+      "Static": 0.5526315789473685,
+      "accuracy": 0.51875,
+      "latency_ms": 0.02863171872604653,
+      "feature": "x1\u00b2",
+      "drift_score": 0.4655556040818107
+    },
+    {
+      "step": 9919,
+      "SEEF": 0.53125,
+      "Static": 0.4444444444444444,
+      "accuracy": 0.625,
+      "latency_ms": 0.037789468743198995,
+      "feature": "x1\u00b2",
+      "drift_score": 0.4981668751015744
+    },
+    {
+      "step": 10079,
+      "SEEF": 0.4233576642335766,
+      "Static": 0.6,
+      "accuracy": 0.50625,
+      "latency_ms": 0.02856391877230635,
+      "feature": "x1\u00b2",
+      "drift_score": 0.479369062269604
+    },
+    {
+      "step": 10239,
+      "SEEF": 0.9570552147239264,
+      "Static": 0.6153846153846154,
+      "accuracy": 0.95625,
+      "latency_ms": 0.02908467500333245,
+      "feature": "x1*x2",
+      "drift_score": 0.15900438634424593
+    },
+    {
+      "step": 10399,
+      "SEEF": 0.9565217391304348,
+      "Static": 0.5575757575757576,
+      "accuracy": 0.95625,
+      "latency_ms": 0.03316411250580131,
+      "feature": "x1*x2",
+      "drift_score": 0.09514782617231571
+    },
+    {
+      "step": 10559,
+      "SEEF": 0.9736842105263158,
+      "Static": 0.47297297297297297,
+      "accuracy": 0.975,
+      "latency_ms": 0.026438775003612136,
+      "feature": "x1*x2",
+      "drift_score": 0.05119925983727852
+    },
+    {
+      "step": 10719,
+      "SEEF": 0.9772727272727273,
+      "Static": 0.5964912280701754,
+      "accuracy": 0.975,
+      "latency_ms": 0.029870449984059633,
+      "feature": "x1*x2",
+      "drift_score": 0.03201333707993484
+    },
+    {
+      "step": 10879,
+      "SEEF": 0.935064935064935,
+      "Static": 0.6666666666666666,
+      "accuracy": 0.9375,
+      "latency_ms": 0.027449518753996927,
+      "feature": "x1*x2",
+      "drift_score": 0.0861307369611876
+    },
+    {
+      "step": 11039,
+      "SEEF": 0.9349112426035503,
+      "Static": 0.6352941176470588,
+      "accuracy": 0.93125,
+      "latency_ms": 0.024006000001008942,
+      "feature": "x1*x2",
+      "drift_score": 0.05449366899988946
+    },
+    {
+      "step": 11199,
+      "SEEF": 0.9433962264150944,
+      "Static": 0.6463414634146342,
+      "accuracy": 0.94375,
+      "latency_ms": 0.03295644998786429,
+      "feature": "x1*x2",
+      "drift_score": 0.04697395642960078
+    },
+    {
+      "step": 11359,
+      "SEEF": 0.9497206703910615,
+      "Static": 0.6593406593406593,
+      "accuracy": 0.94375,
+      "latency_ms": 0.024172912495146193,
+      "feature": "x1*x2",
+      "drift_score": 0.05107366421882108
+    },
+    {
+      "step": 11519,
+      "SEEF": 0.9651162790697675,
+      "Static": 0.573170731707317,
+      "accuracy": 0.9625,
+      "latency_ms": 0.023240068753693777,
+      "feature": "x1*x2",
+      "drift_score": 0.05344288090919523
+    },
+    {
+      "step": 11679,
+      "SEEF": 0.9693251533742331,
+      "Static": 0.5562913907284768,
+      "accuracy": 0.96875,
+      "latency_ms": 0.02064166246213972,
+      "feature": "x1*x2",
+      "drift_score": 0.04841943556077133
+    },
+    {
+      "step": 11839,
+      "SEEF": 0.9491525423728814,
+      "Static": 0.6242038216560509,
+      "accuracy": 0.94375,
+      "latency_ms": 0.026731156251003085,
+      "feature": "x1*x2",
+      "drift_score": 0.04990950987915984
+    },
+    {
+      "step": 11999,
+      "SEEF": 0.9419354838709677,
+      "Static": 0.5394736842105263,
+      "accuracy": 0.94375,
+      "latency_ms": 0.029037037521106868,
+      "feature": "x1*x2",
+      "drift_score": 0.05047111223663547
+    },
+    {
+      "step": 12159,
+      "SEEF": 0.5906040268456376,
+      "Static": 0.9219858156028369,
+      "accuracy": 0.61875,
+      "latency_ms": 0.0338504999746192,
+      "feature": "x1*x2",
+      "drift_score": 0.5378285545641376
+    },
+    {
+      "step": 12319,
+      "SEEF": 0.5228758169934641,
+      "Static": 0.9876543209876543,
+      "accuracy": 0.54375,
+      "latency_ms": 0.025573012504764847,
+      "feature": "x1*x2",
+      "drift_score": 0.5247999309462373
+    },
+    {
+      "step": 12479,
+      "SEEF": 0.5548387096774193,
+      "Static": 0.9512195121951219,
+      "accuracy": 0.56875,
+      "latency_ms": 0.02274218746833867,
+      "feature": "x1*x2",
+      "drift_score": 0.47666634977055317
+    },
+    {
+      "step": 12639,
+      "SEEF": 0.573170731707317,
+      "Static": 0.975,
+      "accuracy": 0.5625,
+      "latency_ms": 0.030163006255179425,
+      "feature": "x1*x2",
+      "drift_score": 0.5138860096511366
+    },
+    {
+      "step": 12799,
+      "SEEF": 0.5492957746478874,
+      "Static": 0.9645390070921985,
+      "accuracy": 0.6,
+      "latency_ms": 0.024822306247074266,
+      "feature": "x1*x2",
+      "drift_score": 0.490447200085399
+    },
+    {
+      "step": 12959,
+      "SEEF": 0.6900584795321637,
+      "Static": 0.9710982658959537,
+      "accuracy": 0.66875,
+      "latency_ms": 0.027634062473680387,
+      "feature": "x1*x2",
+      "drift_score": 0.3946867528293034
+    },
+    {
+      "step": 13119,
+      "SEEF": 0.6233766233766234,
+      "Static": 0.9512195121951219,
+      "accuracy": 0.6375,
+      "latency_ms": 0.03569416248581092,
+      "feature": "x1*x2",
+      "drift_score": 0.47919865404751266
+    },
+    {
+      "step": 13279,
+      "SEEF": 0.6432748538011696,
+      "Static": 0.9937888198757764,
+      "accuracy": 0.61875,
+      "latency_ms": 0.03498405000073035,
+      "feature": "x1*x2",
+      "drift_score": 0.47736703850269124
+    },
+    {
+      "step": 13439,
+      "SEEF": 0.6163522012578616,
+      "Static": 0.974025974025974,
+      "accuracy": 0.61875,
+      "latency_ms": 0.02418481248014359,
+      "feature": "x1*x2",
+      "drift_score": 0.43550007155838794
+    },
+    {
+      "step": 13599,
+      "SEEF": 0.9857142857142858,
+      "Static": 0.9857142857142858,
+      "accuracy": 0.9875,
+      "latency_ms": 0.011091568728716084,
+      "feature": "identity",
+      "drift_score": 0.13696775772012243
+    },
+    {
+      "step": 13759,
+      "SEEF": 0.9459459459459459,
+      "Static": 0.9459459459459459,
+      "accuracy": 0.95,
+      "latency_ms": 0.010559218745243015,
+      "feature": "identity",
+      "drift_score": 0.07505803165114644
+    },
+    {
+      "step": 13919,
+      "SEEF": 0.9761904761904762,
+      "Static": 0.9761904761904762,
+      "accuracy": 0.975,
+      "latency_ms": 0.015142218737196345,
+      "feature": "identity",
+      "drift_score": 0.03459810367749186
+    }
+  ],
+  "events": [
+    {
+      "step": 3001,
+      "event": "Drift injected",
+      "scenario": "interaction"
+    },
+    {
+      "step": 3360,
+      "event": "Drift detected",
+      "fingerprint": "D001",
+      "detection_delay": 359,
+      "score": 0.4714632963631941
+    },
+    {
+      "step": 3360,
+      "event": "Fingerprint generated",
+      "fingerprint": "D001"
+    },
+    {
+      "step": 3360,
+      "event": "Memory queried",
+      "similarity": 0,
+      "mode": "contextual exploitation"
+    },
+    {
+      "step": 3360,
+      "event": "Candidate features generated",
+      "count": 10
+    },
+    {
+      "step": 3360,
+      "event": "Shadow testing",
+      "candidates": [
+        "x1*x2",
+        "x1/x2",
+        "x1-x2",
+        "x1+x2",
+        "x1\u00b2",
+        "x1*x3"
+      ]
+    },
+    {
+      "step": 4480,
+      "event": "Feature promoted",
+      "feature": "x1*x2",
+      "version": "SEEF_v2",
+      "gain": 0.33572882609826415,
+      "reused": false,
+      "confidence": 0.7823170133727824,
+      "adaptation_delay": 1120,
+      "recovery_ratio": 0.9657862474011659,
+      "feature_efficiency": 0.33572882609826415,
+      "explanation": "SEEF detected concept_drift (severity 87.5%). Memory similarity for x1*x2: 0.0%. Future-window F1 gain: +33.6%; measured latency 0.0246 ms/sample; confidence 78.2%. x1*x2 passed 5 consecutive windows and was promoted as SEEF_v2."
+    },
+    {
+      "step": 4480,
+      "event": "Memory updated"
+    },
+    {
+      "step": 6001,
+      "event": "Drift injected",
+      "scenario": "nonlinear"
+    },
+    {
+      "step": 6240,
+      "event": "Drift detected",
+      "fingerprint": "D002",
+      "detection_delay": 239,
+      "score": 0.47073360578931966
+    },
+    {
+      "step": 6240,
+      "event": "Fingerprint generated",
+      "fingerprint": "D002"
+    },
+    {
+      "step": 6240,
+      "event": "Memory queried",
+      "similarity": 0.2226738747485266,
+      "mode": "contextual exploitation"
+    },
+    {
+      "step": 6240,
+      "event": "Candidate features generated",
+      "count": 10
+    },
+    {
+      "step": 6240,
+      "event": "Shadow testing",
+      "candidates": [
+        "sqrt|x1|",
+        "log|x1|",
+        "x1\u00b2",
+        "x1\u00b3",
+        "identity",
+        "x1*x2"
+      ]
+    },
+    {
+      "step": 7360,
+      "event": "Feature promoted",
+      "feature": "x1\u00b2",
+      "version": "SEEF_v3",
+      "gain": 0.5178079461188896,
+      "reused": false,
+      "confidence": 0.7945831047706883,
+      "adaptation_delay": 1120,
+      "recovery_ratio": 0.9880789937347214,
+      "feature_efficiency": 0.5178079461188896,
+      "explanation": "SEEF detected concept_drift (severity 75.7%). Memory similarity for x1\u00b2: 0.0%. Future-window F1 gain: +51.8%; measured latency 0.0292 ms/sample; confidence 79.5%. x1\u00b2 passed 5 consecutive windows and was promoted as SEEF_v3."
+    },
+    {
+      "step": 7360,
+      "event": "Memory updated"
+    },
+    {
+      "step": 9001,
+      "event": "Drift injected",
+      "scenario": "interaction"
+    },
+    {
+      "step": 9280,
+      "event": "Drift detected",
+      "fingerprint": "D003",
+      "detection_delay": 279,
+      "score": 0.5303997041659271
+    },
+    {
+      "step": 9280,
+      "event": "Fingerprint generated",
+      "fingerprint": "D003"
+    },
+    {
+      "step": 9280,
+      "event": "Memory queried",
+      "similarity": 0.9723322437325644,
+      "mode": "exploitation"
+    },
+    {
+      "step": 9280,
+      "event": "Candidate features generated",
+      "count": 10
+    },
+    {
+      "step": 9280,
+      "event": "Shadow testing",
+      "candidates": [
+        "x1*x2",
+        "x1-x2",
+        "x1/x2",
+        "x1+x2",
+        "x1*x3",
+        "x1\u00b2"
+      ]
+    },
+    {
+      "step": 10080,
+      "event": "Feature promoted",
+      "feature": "x1*x2",
+      "version": "SEEF_v4",
+      "gain": 0.5396727163784955,
+      "reused": true,
+      "confidence": 0.9853707842468327,
+      "adaptation_delay": 800,
+      "recovery_ratio": 0.9754235356731599,
+      "feature_efficiency": 0.5396727163784955,
+      "explanation": "SEEF detected concept_drift (severity 100.0%). Memory similarity for x1*x2: 97.2%. Future-window F1 gain: +54.0%; measured latency 0.0293 ms/sample; confidence 98.5%. x1*x2 passed 5 consecutive windows and was promoted as SEEF_v4."
+    },
+    {
+      "step": 10080,
+      "event": "Memory updated"
+    },
+    {
+      "step": 12001,
+      "event": "Drift injected",
+      "scenario": "stable"
+    },
+    {
+      "step": 12320,
+      "event": "Drift detected",
+      "fingerprint": "D004",
+      "detection_delay": 319,
+      "score": 0.5247999309462373
+    },
+    {
+      "step": 12320,
+      "event": "Fingerprint generated",
+      "fingerprint": "D004"
+    },
+    {
+      "step": 12320,
+      "event": "Memory queried",
+      "similarity": 0.2367360322394098,
+      "mode": "contextual exploitation"
+    },
+    {
+      "step": 12320,
+      "event": "Candidate features generated",
+      "count": 10
+    },
+    {
+      "step": 12320,
+      "event": "Shadow testing",
+      "candidates": [
+        "log|x1|",
+        "sqrt|x1|",
+        "x1\u00b3",
+        "identity",
+        "x1-x2",
+        "x1+x2"
+      ]
+    },
+    {
+      "step": 13440,
+      "event": "Feature promoted",
+      "feature": "identity",
+      "version": "SEEF_v5",
+      "gain": 0.36150338818281486,
+      "reused": false,
+      "confidence": 0.7836517936009522,
+      "adaptation_delay": 1120,
+      "recovery_ratio": 0.98807270187225,
+      "feature_efficiency": 0.36150338818281486,
+      "explanation": "SEEF detected concept_drift (severity 80.0%). Memory similarity for identity: 0.0%. Future-window F1 gain: +36.2%; measured latency 0.0079 ms/sample; confidence 78.4%. identity passed 5 consecutive windows and was promoted as SEEF_v5."
+    },
+    {
+      "step": 13440,
+      "event": "Memory updated"
+    }
+  ],
+  "memory": [
+    {
+      "fingerprint": {
+        "id": "D001",
+        "drift_type": "concept_drift",
+        "severity": 0.875,
+        "affected_features": [
+          "x1"
+        ],
+        "distribution_shift": {
+          "x1": 0.015136817437118895,
+          "x2": 0.019302001870264512,
+          "x3": 0.022066103447872874
+        },
+        "correlation_shift": {
+          "x1_y": 0.838496498799052,
+          "x2_y": 0.05564135994284104,
+          "x3_y": 0.1569031124427713,
+          "x1_x2_y": 0.4621858317476374,
+          "x1_squared_y": 0.049176601698079615
+        },
+        "prediction_error_delta": 0.4375,
+        "confidence_delta": -0.001182465830280699,
+        "residual_shift": 0.09965873842333291,
+        "window_statistics": {
+          "mean": [
+            -0.09531918354077552,
+            -0.1563057925398747,
+            0.0010937400909520074
+          ],
+          "std": [
+            0.9602394812989601,
+            1.0855745811935205,
+            0.9922992888805054
+          ],
+          "target_correlations": [
+            -0.09061004971193405,
+            -0.03908529934539824,
+            0.3664233966103437,
+            0.6153973921087406,
+            -0.08201527058933959
+          ],
+          "samples": 160
+        },
+        "fingerprint_vector": [
+          0.1166694188170111,
+          0.0033638165583387827,
+          0.004289434933730708,
+          0.0049036942187035675,
+          0.11180217050855318,
+          0.007419023001965013,
+          0.020920908502032307,
+          0.06162623128623283,
+          0.006557034902297816,
+          0.05833470940850555,
+          -0.000157665829931227,
+          0.013288145247870607,
+          -0.12081624958710663,
+          -0.052114961816188764,
+          0.48857605398267373,
+          0.8205492123294977,
+          -0.1093562737574646,
+          -0.008473016187287078,
+          -0.01389417597970247,
+          9.722363485579852e-05,
+          0.08535663406346504,
+          0.0964977946440901,
+          0.08820646196283578
+        ],
+        "combined_score": 0.4714632963631941,
+        "signals": {
+          "error": 1,
+          "distribution": 0.05650492275525627,
+          "correlation": 0.6249613618521525,
+          "confidence": 0.003547397490842097,
+          "residual": 0.19931747684666581,
+          "detector_vote": 0.0,
+          "ADWIN": 0.0,
+          "Page-Hinkley": 0.0,
+          "DDM": 0.0
+        }
+      },
+      "fingerprint_vector": [
+        0.1166694188170111,
+        0.0033638165583387827,
+        0.004289434933730708,
+        0.0049036942187035675,
+        0.11180217050855318,
+        0.007419023001965013,
+        0.020920908502032307,
+        0.06162623128623283,
+        0.006557034902297816,
+        0.05833470940850555,
+        -0.000157665829931227,
+        0.013288145247870607,
+        -0.12081624958710663,
+        -0.052114961816188764,
+        0.48857605398267373,
+        0.8205492123294977,
+        -0.1093562737574646,
+        -0.008473016187287078,
+        -0.01389417597970247,
+        9.722363485579852e-05,
+        0.08535663406346504,
+        0.0964977946440901,
+        0.08820646196283578
+      ],
+      "candidate_features": [
+        "x1*x2",
+        "x1/x2",
+        "x1-x2",
+        "x1+x2",
+        "x1\u00b2",
+        "x1*x3"
+      ],
+      "selected_features": [
+        "x1*x2"
+      ],
+      "adaptation_strategy": "interaction",
+      "performance_before": 0.6111204360597415,
+      "performance_after": 0.9468492621580058,
+      "performance_gain": 0.33572882609826427,
+      "latency_cost": 0.024634181269789224,
+      "complexity_cost": 2,
+      "stability_score": 0.979217475115424,
+      "reward": 0.3097941694390265,
+      "timestamp": "2026-10-05T14:38:35.459722+00:00",
+      "step": 4480,
+      "reused": false,
+      "id": "E001"
+    },
+    {
+      "fingerprint": {
+        "id": "D002",
+        "drift_type": "concept_drift",
+        "severity": 0.7569915298625073,
+        "affected_features": [],
+        "distribution_shift": {
+          "x1": 0.012585697691697104,
+          "x2": 0.01320904274684893,
+          "x3": 0.011932930849904941
+        },
+        "correlation_shift": {
+          "x1_y": 0.07048427644728926,
+          "x2_y": 0.06975868883239345,
+          "x3_y": 0.09181443343216666,
+          "x1_x2_y": 0.4689709460648631,
+          "x1_squared_y": 0.7569915298625073
+        },
+        "prediction_error_delta": 0.35625,
+        "confidence_delta": -0.012042806840599996,
+        "residual_shift": 0.14805120583800538,
+        "window_statistics": {
+          "mean": [
+            0.022412392243194735,
+            0.05832235175658138,
+            0.125768251130759
+          ],
+          "std": [
+            1.0225744239718684,
+            0.9990100955834577,
+            0.9975697425527038
+          ],
+          "target_correlations": [
+            0.04409030134443162,
+            -0.09171291796285116,
+            0.3684850467888645,
+            0.05773756369709215,
+            0.706196469057879
+          ],
+          "samples": 160
+        },
+        "fingerprint_vector": [
+          0.09199353703823236,
+          0.0025491321040351784,
+          0.002675385644435038,
+          0.002416919416775115,
+          0.00856561485852348,
+          0.008477437688116403,
+          0.011157766169616794,
+          0.05699178180303921,
+          0.09199353703823236,
+          0.04329334778134545,
+          -0.0014635043503541379,
+          0.01799195043871531,
+          0.05358082104951021,
+          -0.1114542948324974,
+          0.44780214127314144,
+          0.07016568211047848,
+          0.8582065778773592,
+          0.0018157801019818645,
+          0.00472508979279278,
+          0.010189340137647803,
+          0.08284569856247596,
+          0.08093659229037622,
+          0.0808198995096729
+        ],
+        "combined_score": 0.47073360578931966,
+        "signals": {
+          "error": 1,
+          "distribution": 0.037727671288450976,
+          "correlation": 0.5832079498556879,
+          "confidence": 0.03612842052179999,
+          "residual": 0.29610241167601076,
+          "detector_vote": 0.0,
+          "ADWIN": 0.0,
+          "Page-Hinkley": 0.0,
+          "DDM": 0.0
+        }
+      },
+      "fingerprint_vector": [
+        0.09199353703823236,
+        0.0025491321040351784,
+        0.002675385644435038,
+        0.002416919416775115,
+        0.00856561485852348,
+        0.008477437688116403,
+        0.011157766169616794,
+        0.05699178180303921,
+        0.09199353703823236,
+        0.04329334778134545,
+        -0.0014635043503541379,
+        0.01799195043871531,
+        0.05358082104951021,
+        -0.1114542948324974,
+        0.44780214127314144,
+        0.07016568211047848,
+        0.8582065778773592,
+        0.0018157801019818645,
+        0.00472508979279278,
+        0.010189340137647803,
+        0.08284569856247596,
+        0.08093659229037622,
+        0.0808198995096729
+      ],
+      "candidate_features": [
+        "sqrt|x1|",
+        "log|x1|",
+        "x1\u00b2",
+        "x1\u00b3",
+        "identity",
+        "x1*x2"
+      ],
+      "selected_features": [
+        "x1\u00b2"
+      ],
+      "adaptation_strategy": "interaction",
+      "performance_before": 0.45089694969946476,
+      "performance_after": 0.9687048958183543,
+      "performance_gain": 0.5178079461188896,
+      "latency_cost": 0.029158800001027885,
+      "complexity_cost": 2,
+      "stability_score": 0.9820998557484618,
+      "reward": 0.49245814605597416,
+      "timestamp": "2026-10-05T14:38:36.414939+00:00",
+      "step": 7360,
+      "reused": false,
+      "id": "E002"
+    },
+    {
+      "fingerprint": {
+        "id": "D003",
+        "drift_type": "concept_drift",
+        "severity": 1.0,
+        "affected_features": [],
+        "distribution_shift": {
+          "x1": 0.023673627753840985,
+          "x2": 0.01322960197432952,
+          "x3": 0.01332084276071659
+        },
+        "correlation_shift": {
+          "x1_y": 0.0703981206925291,
+          "x2_y": 0.13224796234099537,
+          "x3_y": 0.09799844035663469,
+          "x1_x2_y": 0.5703412796002515,
+          "x1_squared_y": 0.8230999075701227
+        },
+        "prediction_error_delta": 0.5375,
+        "confidence_delta": 0.0007318011373845801,
+        "residual_shift": 0.16008108707418334,
+        "window_statistics": {
+          "mean": [
+            -0.07689622946982858,
+            -0.09966310294020808,
+            0.017790844745656623
+          ],
+          "std": [
+            1.0501447068287841,
+            1.0242596842000917,
+            1.0133236674305937
+          ],
+          "target_correlations": [
+            0.00993618976937332,
+            -0.09270931785426274,
+            0.3999728617631011,
+            0.5781142792870884,
+            -0.13748226057955457
+          ],
+          "samples": 160
+        },
+        "fingerprint_vector": [
+          0.13368935191785203,
+          0.0052748532532591276,
+          0.0029477615234654157,
+          0.0029680913927996864,
+          0.009411479131618944,
+          0.01768014437782417,
+          0.013101347980238768,
+          0.07624855604175607,
+          0.11003969320669361,
+          0.07185802665584545,
+          9.78340197896915e-05,
+          0.02140113678525281,
+          0.013283627708003109,
+          -0.12394248620682535,
+          0.534721126738376,
+          0.7728772333234696,
+          -0.18379914317081905,
+          -0.006853471388498545,
+          -0.008882597094799062,
+          0.0015856310027453047,
+          0.09359544351726859,
+          0.09128840891752937,
+          0.0903137229212114
+        ],
+        "combined_score": 0.5303997041659271,
+        "signals": {
+          "error": 1,
+          "distribution": 0.05022407248888709,
+          "correlation": 0.6776342842242133,
+          "confidence": 0.0021954034121537402,
+          "residual": 0.3201621741483667,
+          "detector_vote": 0.3333333333333333,
+          "ADWIN": 0.0,
+          "Page-Hinkley": 0.0,
+          "DDM": 1.0
+        }
+      },
+      "fingerprint_vector": [
+        0.13368935191785203,
+        0.0052748532532591276,
+        0.0029477615234654157,
+        0.0029680913927996864,
+        0.009411479131618944,
+        0.01768014437782417,
+        0.013101347980238768,
+        0.07624855604175607,
+        0.11003969320669361,
+        0.07185802665584545,
+        9.78340197896915e-05,
+        0.02140113678525281,
+        0.013283627708003109,
+        -0.12394248620682535,
+        0.534721126738376,
+        0.7728772333234696,
+        -0.18379914317081905,
+        -0.006853471388498545,
+        -0.008882597094799062,
+        0.0015856310027453047,
+        0.09359544351726859,
+        0.09128840891752937,
+        0.0903137229212114
+      ],
+      "candidate_features": [
+        "x1*x2",
+        "x1-x2",
+        "x1/x2",
+        "x1+x2",
+        "x1*x3",
+        "x1\u00b2"
+      ],
+      "selected_features": [
+        "x1*x2"
+      ],
+      "adaptation_strategy": "reuse",
+      "performance_before": 0.41662486761479833,
+      "performance_after": 0.9562975839932939,
+      "performance_gain": 0.5396727163784956,
+      "latency_cost": 0.029262756262937728,
+      "complexity_cost": 2,
+      "stability_score": 0.9801220921855964,
+      "reward": 0.5138253567370064,
+      "timestamp": "2026-10-05T14:38:37.214586+00:00",
+      "step": 10080,
+      "reused": true,
+      "id": "E003"
+    },
+    {
+      "fingerprint": {
+        "id": "D004",
+        "drift_type": "concept_drift",
+        "severity": 0.7999999999999999,
+        "affected_features": [
+          "x1"
+        ],
+        "distribution_shift": {
+          "x1": 0.01540591150547189,
+          "x2": 0.014016478632222263,
+          "x3": 0.01113262859924076
+        },
+        "correlation_shift": {
+          "x1_y": 0.7923766244618371,
+          "x2_y": 0.019982709249796976,
+          "x3_y": 0.1990136346437597,
+          "x1_x2_y": 0.742651564421902,
+          "x1_squared_y": 0.0665174335496747
+        },
+        "prediction_error_delta": 0.39999999999999997,
+        "confidence_delta": 0.01003499468748359,
+        "residual_shift": 0.05528857413241393,
+        "window_statistics": {
+          "mean": [
+            -0.005867346886514822,
+            -0.12782618600158685,
+            -0.0086558817278833
+          ],
+          "std": [
+            0.9250311843736518,
+            0.9622334512850745,
+            0.9453001672653569
+          ],
+          "target_correlations": [
+            0.7344787748583836,
+            -0.07218283830170566,
+            0.23404012382186168,
+            -0.18356679020018535,
+            0.02747553387193972
+          ],
+          "samples": 160
+        },
+        "fingerprint_vector": [
+          0.09801802629555617,
+          0.00314595216468824,
+          0.0028622241065505484,
+          0.00227332975578967,
+          0.0970839910156055,
+          0.002448332150878817,
+          0.024383654592107812,
+          0.09099155071242741,
+          0.008149884438481155,
+          0.049009013147778085,
+          0.0012295129664419162,
+          0.006774096141443445,
+          0.8999019983449617,
+          -0.08844024178430582,
+          0.2867518876373308,
+          -0.22491068086040764,
+          0.0336637200193029,
+          -0.0004792548011729664,
+          -0.010441058717303497,
+          -0.0007070270356790746,
+          0.07555810912845508,
+          0.07859685310877018,
+          0.07721371387684119
+        ],
+        "combined_score": 0.5247999309462373,
+        "signals": {
+          "error": 1,
+          "distribution": 0.040555018736934914,
+          "correlation": 0.7282167865307883,
+          "confidence": 0.030104984062450768,
+          "residual": 0.11057714826482785,
+          "detector_vote": 0.3333333333333333,
+          "ADWIN": 0.0,
+          "Page-Hinkley": 0.0,
+          "DDM": 1.0
+        }
+      },
+      "fingerprint_vector": [
+        0.09801802629555617,
+        0.00314595216468824,
+        0.0028622241065505484,
+        0.00227332975578967,
+        0.0970839910156055,
+        0.002448332150878817,
+        0.024383654592107812,
+        0.09099155071242741,
+        0.008149884438481155,
+        0.049009013147778085,
+        0.0012295129664419162,
+        0.006774096141443445,
+        0.8999019983449617,
+        -0.08844024178430582,
+        0.2867518876373308,
+        -0.22491068086040764,
+        0.0336637200193029,
+        -0.0004792548011729664,
+        -0.010441058717303497,
+        -0.0007070270356790746,
+        0.07555810912845508,
+        0.07859685310877018,
+        0.07721371387684119
+      ],
+      "candidate_features": [
+        "log|x1|",
+        "sqrt|x1|",
+        "x1\u00b3",
+        "identity",
+        "x1-x2",
+        "x1+x2"
+      ],
+      "selected_features": [
+        "identity"
+      ],
+      "adaptation_strategy": "interaction",
+      "performance_before": 0.6071953391429202,
+      "performance_after": 0.9686987273257353,
+      "performance_gain": 0.361503388182815,
+      "latency_cost": 0.007908562488978532,
+      "complexity_cost": 1,
+      "stability_score": 0.9862071171570984,
+      "reward": 0.34781791059742007,
+      "timestamp": "2026-10-05T14:38:38.208490+00:00",
+      "step": 13440,
+      "reused": false,
+      "id": "E004"
+    }
+  ]
+}

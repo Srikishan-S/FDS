@@ -1,0 +1,20 @@
+flowchart TD
+  S[Seeded streaming generator] --> P[Frozen production classifier]
+  P --> L[Delayed labels and window metrics]
+  L --> D[Multi-signal drift detection]
+  D --> F[Normalized drift fingerprint]
+  F --> M[Episodic Adaptation Memory]
+  F --> C[Contextual strategy controller]
+  M --> G[Conditioned feature generation]
+  C --> G
+  G --> R[Past-window candidate ranking]
+  R --> A[Prospective shadow arena]
+  S --> A
+  A --> T[Consecutive-window deployment gate]
+  T --> V[Feature version registry]
+  V --> P
+  V --> O[Continuous probation monitoring]
+  O --> B[Autonomous rollback]
+  B --> P
+  T --> M
+  G --> H[Feature genealogy and pruning]
